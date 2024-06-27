@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SOUKLALLA"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
+            android:name=".women.WomenEditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserEditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".women.WomenLogoutask"
+            android:exported="false" />
+        <activity
+            android:name=".women.WomenPassmanage"
+            android:exported="false" />
+        <activity
+            android:name=".User.Favorite"
+            android:exported="false" />
+        <activity
+            android:name=".User.Menu"
+            android:exported="false" />
+        <activity
+            android:name=".User.Settings"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserSuccesspass"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserNotification"
+            android:exported="false" />
+        <activity
+            android:name=".women.WomenNotification"
+            android:exported="false" />
+        <activity
+            android:name=".User.PaymentSuccessfull"
+            android:exported="false" />
+        <activity
+            android:name=".User.PaymentVerifi"
+            android:exported="false" />
+        <activity
+            android:name=".User.Payment"
+            android:exported="false" />
+        <activity
+            android:name=".women.WomenProfile"
+            android:exported="false" />
+        <activity
+            android:name=".women.WomenProfilehome"
+            android:exported="false" />
+        <activity
+            android:name=".women.SuccessfullPass"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserResetpass"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserForgotpassfalse"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserVerification"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserForgotpass"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserLogin"
+            android:exported="false" />
+        <activity
+            android:name=".women.PRODUCTADD"
+            android:exported="false" />
+        <activity
+            android:name=".User.USERASKPRODUCT"
+            android:exported="false" />
+        <activity
+            android:name=".women.WOMENHOMEPAGE"
+            android:exported="false" />
+        <activity
+            android:name=".User.PRODUCTBUY"
+            android:exported="false" />
+        <activity
+            android:name=".women.WOMENHELLO"
+            android:exported="false" />
+        <activity
+            android:name=".User.USERCATEGORYSHOW"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserCreatacount"
+            android:exported="false" />
+        <activity
+            android:name=".User.USERMANAGEPASS"
+            android:exported="false" />
+        <activity
+            android:name=".User.USERLOGOUTASK"
+            android:exported="false" />
+        <activity
+            android:name=".User.USERHOMEPROFILE"
+            android:exported="false" />
+        <activity
+            android:name=".women.TERMSWOMEN"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.gms.ads.APPLICATION_ID"
+            android:value=" ca-app-pub-3940256099942544/2247696110" />
+
+        <activity
+            android:name=".User.USERCATEGORY"
+            android:exported="false" />
+        <activity
+            android:name=".women.WOMENFORGOTFALSE"
+            android:exported="false" />
+        <activity
+            android:name=".women.WOMENRESETPASS"
+            android:exported="false" />
+        <activity
+            android:name=".women.WOMENVERIFICATION"
+            android:exported="false" />
+        <activity
+            android:name=".women.WOMENFORGOTPASS"
+            android:exported="false" />
+        <activity
+            android:name=".APPSTART"
+            android:exported="false" />
+        <activity
+            android:name=".women.WOMENLOGIN"
+            android:exported="false" />
+        <activity
+            android:name=".User.USERPROFILE"
+            android:exported="false" />
+        <activity
+            android:name=".women.WOMENCREATACOUNT"
+            android:exported="false" />
+        <activity
+            android:name=".LOGO"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
