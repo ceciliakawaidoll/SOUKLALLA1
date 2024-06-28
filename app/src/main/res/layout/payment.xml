@@ -81,7 +81,7 @@
                 app:srcCompat="@drawable/goldencard" />
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/name_W"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

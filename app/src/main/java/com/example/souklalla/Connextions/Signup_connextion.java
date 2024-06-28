@@ -16,16 +16,17 @@ import java.net.Socket;
 import java.net.URL;
 
 public class Signup_connextion extends AsyncTask {
-    String fullname ,Email ,Phone ,Pass1,Wilaya;
+    String fullname ,Email ,Phone ,Pass1,Wilaya, Type;
     String ip;
 
-    public Signup_connextion(String fullname, String email, String phone, String pass1,String wilaya,String IP) {
+    public Signup_connextion(String fullname, String email, String phone, String pass1,String wilaya,String IP, String type) {
         this.fullname = fullname;
         Email = email;
         Phone = phone;
         Pass1 = pass1;
         Wilaya = wilaya;
         ip = IP;
+        Type = type;
     }
 
     @Override
@@ -47,20 +48,27 @@ public class Signup_connextion extends AsyncTask {
             BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             msg = inFromServer.readLine();
 
+            outToServer.close();
+            inFromServer.close();
             if(Boolean.parseBoolean(msg)){
-
+                clientSocket = new Socket(ip, 6789);
+                outToServer = new DataOutputStream(clientSocket.getOutputStream());
+                inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 outToServer.writeBytes("add\n");
                 outToServer.writeBytes(fullname+"\n");
                 outToServer.writeBytes(Email+"\n");
                 outToServer.writeBytes(Phone+"\n");
                 outToServer.writeBytes(Wilaya+"\n");
                 outToServer.writeBytes(Pass1+"\n");
+                outToServer.writeBytes(Type+"\n");
                 outToServer.flush();
                 Log.d("test",inFromServer.readLine());
             }else{
 
             }
 
+            outToServer.close();
+            inFromServer.close();
 
         } catch (IOException e) {
             throw new RuntimeException(e);

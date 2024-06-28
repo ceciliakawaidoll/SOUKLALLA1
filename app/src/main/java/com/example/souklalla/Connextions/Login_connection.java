@@ -9,16 +9,20 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class product_connextion extends AsyncTask {
-    String pro_n, Prod_desc, Price, pro_type, Email;
+public class Login_connection extends AsyncTask {
+    public static interface Result {
+        void getResult(String email);
+    }
+    Result R;
+    public void set_result(Result r){
+        R = r;
+    }
+    String Name, Pass;
     String ip;
 
-    public product_connextion(String pro_n, String prod_desc, String price, String pro_type, String email, String ip) {
-        this.pro_n = pro_n;
-        Prod_desc = prod_desc;
-        Price = price;
-        this.pro_type = pro_type;
-        Email = email;
+    public Login_connection(String name, String pass, String ip) {
+        Name = name;
+        Pass = pass;
         this.ip = ip;
     }
 
@@ -34,27 +38,30 @@ public class product_connextion extends AsyncTask {
 
             clientSocket = new Socket(ip, 6789);
             DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
-            BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            outToServer.writeBytes("addprod\n");
-            outToServer.writeBytes(pro_n + "\n");
-            outToServer.writeBytes(Prod_desc + "\n");
-            outToServer.writeBytes(Price + "\n");
-            outToServer.writeBytes(pro_type + "\n");
 
-            outToServer.writeBytes(Email + "\n");
+
+            BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            outToServer.writeBytes("login\n");
+            outToServer.writeBytes(Name + "\n");
+            outToServer.writeBytes(Pass + "\n");
+
             outToServer.flush();
 
-            Log.d("test", inFromServer.readLine());
+            msg = inFromServer.readLine();
 
             outToServer.close();
             inFromServer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return msg;
+    }
+    protected void onPostExecute(Object results)
+    {
+        if(results != null)
+        {
+            R.getResult(String.valueOf(results));
+        }
 
     }
 }
-
-
-

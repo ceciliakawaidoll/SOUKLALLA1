@@ -69,7 +69,7 @@
             android:textColor="@color/pink"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tv_number"
-            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintStart_toEndOf="@+id/btn_login_W"
             app:layout_constraintTop_toBottomOf="@+id/textView13"
             tools:ignore="MissingConstraints" />
 
@@ -131,7 +131,7 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_login_W"
             android:layout_width="181dp"
             android:layout_height="60dp"
             android:layout_marginStart="16dp"

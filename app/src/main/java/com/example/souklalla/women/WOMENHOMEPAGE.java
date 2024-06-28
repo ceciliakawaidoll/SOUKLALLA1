@@ -9,11 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.souklalla.Category;
-import com.example.souklalla.CategoryAdd;
-import com.example.souklalla.Category_Adapter;
+import com.example.souklalla.Connextions.get_products;
 import com.example.souklalla.R;
 import com.example.souklalla.categoryAdd_Adapter;
+import com.example.souklalla.structure.Product_elem;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -32,10 +31,22 @@ public class WOMENHOMEPAGE extends AppCompatActivity {
         RecyclerView category_list = findViewById(R.id.rv_product_home);
 
 
-        List<CategoryAdd> categoryadd = new ArrayList<>();
-        for (int i=0;i<10;i++) {
-            categoryadd.add(new CategoryAdd("إسم المنتوج  " + i));
-        }
+        List<Product_elem> categoryadd = new ArrayList<>();
+        //for (int i=0;i<10;i++) {
+          //  categoryadd.add(new CategoryAdd("إسم المنتوج  " + i));
+        //}
+        String ip = getResources().getString(R.string.ip);
+        get_products prods = new get_products(ip);
+
+        prods.set_result(new get_products.Result_prod() {
+
+            @Override
+            public void getproducts(List<Product_elem> products) {
+                categoryadd.addAll(products);
+            }
+        });
+        prods.execute();
+
         categoryAdd_Adapter adapter = new categoryAdd_Adapter(categoryadd);
         category_list.setAdapter(adapter);
         category_list.setLayoutManager(new LinearLayoutManager(this));

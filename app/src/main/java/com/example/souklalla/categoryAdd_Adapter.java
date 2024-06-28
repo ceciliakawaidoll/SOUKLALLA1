@@ -1,6 +1,5 @@
 package com.example.souklalla;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,14 +8,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.souklalla.structure.Product_elem;
+
 import java.util.List;
 
 public class categoryAdd_Adapter extends RecyclerView.Adapter<categoryAdd_Adapter.categoryAdd_holder> {
 
 
-    List<CategoryAdd> categoryadd;
+    List<Product_elem> categoryadd;
 
-    public categoryAdd_Adapter(List<CategoryAdd> categoryadd) {
+    public categoryAdd_Adapter(List<Product_elem> categoryadd) {
         this.categoryadd = categoryadd;
     }
 
@@ -33,7 +34,7 @@ public class categoryAdd_Adapter extends RecyclerView.Adapter<categoryAdd_Adapte
 
 
         holder.itemView.setTag(position);
-        holder.product_name.setText(categoryadd.get(position).getProduct_name());
+        holder.product_name.setText(categoryadd.get(position).getName());
     }
 
     @Override

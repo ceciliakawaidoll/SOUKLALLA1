@@ -15,7 +15,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.souklalla.Connextions.Signup_connextion;
-import com.example.souklalla.Connextions.SigupW_connextion;
 import com.example.souklalla.R;
 
 import java.net.URL;
@@ -91,7 +90,7 @@ public class WOMENCREATACOUNT extends AppCompatActivity {
 
 
 
-        TextView name = findViewById(R.id.name);
+        TextView name = findViewById(R.id.name_W);
         TextView lastname = findViewById(R.id.lastname);
         TextView email = findViewById(R.id.email);
         TextView phone= findViewById(R.id.phone);
@@ -109,7 +108,7 @@ public class WOMENCREATACOUNT extends AppCompatActivity {
             String Wilaya = spin.getSelectedItem().toString();
             //String res = String.valueOf(new Sign_up_check(Email,Phone).execute());
             String ip = getResources().getString(R.string.ip);
-            String res = String.valueOf(new SigupW_connextion(fullname,Email,Phone,Pass1,Wilaya,ip).execute());
+            String res = String.valueOf(new Signup_connextion(fullname,Email,Phone,Pass1,Wilaya,ip,"Worker").execute());
             Intent intent = new Intent(WOMENCREATACOUNT.this, WOMENHOMEPAGE.class);
             startActivity(intent);
         });

@@ -87,7 +87,7 @@ public class UserCreatacount extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
 
         Button btn = findViewById(R.id.signup_btn);
-        TextView name = findViewById(R.id.name);
+        TextView name = findViewById(R.id.name_W);
         TextView lastname = findViewById(R.id.lastname);
         TextView email = findViewById(R.id.email);
         TextView phone= findViewById(R.id.phone);
@@ -97,12 +97,13 @@ public class UserCreatacount extends AppCompatActivity {
             URL url = null;
             String fullname = name.getText().toString()+" "+ lastname.getText().toString();
             String Email = email.getText().toString();
+
             String Phone = phone.getText().toString();
             String Pass1 = pass1.getText().toString();
             String Wilaya = spin.getSelectedItem().toString();
             //String res = String.valueOf(new Sign_up_check(Email,Phone).execute());
             String ip = getResources().getString(R.string.ip);
-            String res = String.valueOf(new Signup_connextion(fullname,Email,Phone,Pass1,Wilaya,ip).execute());
+            String res = String.valueOf(new Signup_connextion(fullname,Email,Phone,Pass1,Wilaya,ip,"user").execute());
         });
 
 
