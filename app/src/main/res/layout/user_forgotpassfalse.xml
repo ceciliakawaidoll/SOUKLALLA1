@@ -95,7 +95,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/name_W"
+                android:id="@+id/U_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -111,7 +111,7 @@
 
 
             <Button
-                android:id="@+id/btn_login_W"
+                android:id="@+id/btn_login_forgot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

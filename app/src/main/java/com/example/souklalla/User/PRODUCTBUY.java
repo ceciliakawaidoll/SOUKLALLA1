@@ -8,8 +8,16 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import com.example.souklalla.Connextions.get_products;
 import com.example.souklalla.R;
+import com.example.souklalla.categoryAdd_Adapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import test.Product_elem;
 
 public class PRODUCTBUY extends AppCompatActivity {
 
@@ -23,6 +31,15 @@ public class PRODUCTBUY extends AppCompatActivity {
         ImageView minus= findViewById(R.id.iv_minus);
         TextView price= findViewById(R.id.tv_price);
         TextView number = findViewById(R.id.tv_number);
+        TextView name = findViewById(R.id.tv_namep);
+        TextView desc = findViewById(R.id.tv_desc_p);
+        CardView back =findViewById(R.id.cd_back);
+
+
+        back.setOnClickListener(v -> {
+            Intent intent = new Intent(PRODUCTBUY.this, USERCATEGORY.class);
+            startActivity(intent);
+        });
         buy.setOnClickListener(v -> {
             Intent intent = new Intent(PRODUCTBUY.this, Payment.class);
             startActivity(intent);

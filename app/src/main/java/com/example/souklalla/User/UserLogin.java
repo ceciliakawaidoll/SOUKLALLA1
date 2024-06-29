@@ -26,9 +26,15 @@ public class UserLogin extends AppCompatActivity {
         setContentView(R.layout.user_login);
         Button login= findViewById(R.id.user_login);
         TextView signup = findViewById(R.id.user_acont);
+        TextView forpass=findViewById(R.id.user_pass);
         CardView BACK = findViewById(R.id.cd_back);
         BACK.setOnClickListener(v -> {
             Intent intent = new Intent(UserLogin.this, USERCATEGORY.class);
+            startActivity(intent);
+        });
+
+        forpass.setOnClickListener(v -> {
+            Intent intent = new Intent(UserLogin.this, UserForgotpass.class);
             startActivity(intent);
         });
 

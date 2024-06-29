@@ -15,12 +15,14 @@ import com.example.souklalla.User.PRODUCTBUY;
 
 import java.util.List;
 
+import test.Product_elem;
+
 public class Category_Adapter  extends RecyclerView.Adapter<Category_Adapter.Category_holder>{
 
-     List<Category> category;
+     List<Product_elem> category;
     Context context;
 
-    public Category_Adapter(List<Category> category, Context context) {
+    public Category_Adapter(List<Product_elem> category, Context context) {
         this.category = category;
         this.context = context;
     }
@@ -37,7 +39,9 @@ public class Category_Adapter  extends RecyclerView.Adapter<Category_Adapter.Cat
     @Override
     public void onBindViewHolder(@NonNull Category_holder holder, int position) {
         holder.itemView.setTag(position);
-        holder.product_name.setText(category.get(position).getProduct_name());
+        holder.product_name.setText(category.get(position).getName());
+        holder.worke_n.setText(category.get(position).getWorker());
+        holder.prod_price.setText(category.get(position).getPrice());
         holder.card.setOnClickListener(v -> {
             Intent intent=new Intent(context, PRODUCTBUY.class);
             context.startActivity(intent);
@@ -51,12 +55,14 @@ public class Category_Adapter  extends RecyclerView.Adapter<Category_Adapter.Cat
     }
 
     public class Category_holder extends RecyclerView.ViewHolder{
-        TextView product_name ;
+        TextView product_name ,worke_n,prod_price;
         CardView card ;
 
         public Category_holder(@NonNull View itemView) {
             super(itemView);
             product_name = itemView.findViewById(R.id.tv_product_name);
+            worke_n= itemView.findViewById(R.id.tv_women_name);
+             prod_price=itemView.findViewById(R.id.tv_price);
             card = itemView.findViewById(R.id.cd_show);
         }
     }

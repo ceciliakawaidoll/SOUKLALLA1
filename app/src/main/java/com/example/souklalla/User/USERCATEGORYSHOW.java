@@ -11,10 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.souklalla.Category;
 import com.example.souklalla.Category_Adapter;
+import com.example.souklalla.Connextions.get_products;
 import com.example.souklalla.R;
+import com.example.souklalla.categoryAdd_Adapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import test.Product_elem;
 
 public class USERCATEGORYSHOW extends AppCompatActivity {
 
@@ -27,15 +31,25 @@ public class USERCATEGORYSHOW extends AppCompatActivity {
         RecyclerView category_list = findViewById(R.id.rv_product);
 
 
-        List<Category> category = new ArrayList<>();
-        for (int i=0;i<10;i++){
-            category.add(new Category("إسم المنتوج  "+ i) );
-        }
+        List<Product_elem> category = new ArrayList<>();
+        //for (int i=0;i<10;i++){
+        //    category.add(new Category("إسم المنتوج  "+ i) );
+       // }
 
-
-       Category_Adapter adapter = new Category_Adapter(category,this);
+        String ip = getResources().getString(R.string.ip);
+        get_products prods = new get_products(ip);
+        Category_Adapter adapter = new Category_Adapter(category,this);
       category_list.setAdapter(adapter);
         category_list.setLayoutManager(new LinearLayoutManager(this));
+        prods.set_result(new get_products.Result_prod() {
+
+            @Override
+            public void getproducts(List<Product_elem> products) {
+                category.addAll(products);
+                adapter.notifyDataSetChanged();
+            }
+        });
+        prods.execute();
 
         BACK.setOnClickListener(v -> {
             Intent intent = new Intent(USERCATEGORYSHOW.this, USERCATEGORY.class);

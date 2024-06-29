@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.souklalla.Connextions.get_products;
 import com.example.souklalla.R;
 import com.example.souklalla.categoryAdd_Adapter;
-import com.example.souklalla.structure.Product_elem;
+import test.Product_elem;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -37,19 +37,21 @@ public class WOMENHOMEPAGE extends AppCompatActivity {
         //}
         String ip = getResources().getString(R.string.ip);
         get_products prods = new get_products(ip);
+        categoryAdd_Adapter adapter = new categoryAdd_Adapter(categoryadd);
+        category_list.setAdapter(adapter);
+        category_list.setLayoutManager(new LinearLayoutManager(this));
 
         prods.set_result(new get_products.Result_prod() {
 
             @Override
             public void getproducts(List<Product_elem> products) {
                 categoryadd.addAll(products);
+                adapter.notifyDataSetChanged();
             }
         });
         prods.execute();
 
-        categoryAdd_Adapter adapter = new categoryAdd_Adapter(categoryadd);
-        category_list.setAdapter(adapter);
-        category_list.setLayoutManager(new LinearLayoutManager(this));
+
 
         ft.setOnClickListener(v -> {
             Intent intent = new Intent(WOMENHOMEPAGE.this, PRODUCTADD.class);

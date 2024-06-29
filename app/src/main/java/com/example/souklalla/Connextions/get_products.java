@@ -2,7 +2,7 @@ package com.example.souklalla.Connextions;
 
 import android.os.AsyncTask;
 
-import com.example.souklalla.structure.Product_elem;
+import test.Product_elem;
 import com.example.souklalla.women.WOMENLOGIN;
 
 
@@ -35,7 +35,7 @@ public class get_products extends AsyncTask {
     protected Object doInBackground(Object[] objects) {
 
 
-        Product_elem msg;
+        Object msg;
 
         Socket clientSocket = null;
         try {
@@ -51,7 +51,7 @@ public class get_products extends AsyncTask {
             outToServer.flush();
             ObjectInputStream  inFromServer = new ObjectInputStream (clientSocket.getInputStream());
 
-            msg =  (Product_elem) inFromServer.readObject();
+            msg = inFromServer.readObject();
             inFromServer.close();
 
 

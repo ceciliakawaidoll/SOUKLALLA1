@@ -43,7 +43,7 @@
 
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tv_namep"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="144dp"
@@ -70,11 +70,11 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tv_number"
             app:layout_constraintStart_toEndOf="@+id/btn_login_W"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/tv_desc_p"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/tv_desc_p"
             android:layout_width="398dp"
             android:layout_height="75dp"
             android:layout_marginTop="24dp"
@@ -86,7 +86,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.461"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/tv_namep"
             tools:ignore="MissingConstraints" />
 
         <ImageView

@@ -1,11 +1,12 @@
-package com.example.souklalla.structure;
+package test;
 
 import java.io.Serializable;
 
 public class Product_elem implements Serializable {
 	String name,price,descr,Worker,Type;
 	int id;
-	Serializable serialVersionUID = 123456;
+	private static final long serialVersionUID = 1L;
+	//Serializable serialVersionUID = 123456;
 	public Product_elem(String name, String price, String descr,String type, String worker, int id) {
 		super();
 		this.name = name;
@@ -32,6 +33,13 @@ public class Product_elem implements Serializable {
 	}
 	public void setDescr(String descr) {
 		this.descr = descr;
+	}
+
+	public String getType() {
+		return Type;
+	}
+	public void setType(String type) {
+		Type = type;
 	}
 	public String getWorker() {
 		return Worker;

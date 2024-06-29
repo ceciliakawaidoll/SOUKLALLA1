@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.souklalla.structure.Product_elem;
+import test.Product_elem;
 
 import java.util.List;
 
@@ -35,6 +35,8 @@ public class categoryAdd_Adapter extends RecyclerView.Adapter<categoryAdd_Adapte
 
         holder.itemView.setTag(position);
         holder.product_name.setText(categoryadd.get(position).getName());
+        holder.prod_price.setText(categoryadd.get(position).getPrice());
+        holder.prod_type.setText(categoryadd.get(position).getType());
     }
 
     @Override
@@ -43,10 +45,12 @@ public class categoryAdd_Adapter extends RecyclerView.Adapter<categoryAdd_Adapte
     }
 
     public class categoryAdd_holder extends RecyclerView.ViewHolder{
-        TextView product_name ;
+        TextView product_name ,prod_price,prod_type;
         public categoryAdd_holder(@NonNull View itemView) {
             super(itemView);
             product_name = itemView.findViewById(R.id.tv_product_name);
+            prod_price=itemView.findViewById(R.id.tv_price);
+            prod_type=itemView.findViewById(R.id.tv_product_type);
         }
     }
 }
