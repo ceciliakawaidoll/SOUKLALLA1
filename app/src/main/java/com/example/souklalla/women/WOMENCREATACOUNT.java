@@ -110,6 +110,9 @@ public class WOMENCREATACOUNT extends AppCompatActivity {
             String ip = getResources().getString(R.string.ip);
             String res = String.valueOf(new Signup_connextion(fullname,Email,Phone,Pass1,Wilaya,ip,"Worker").execute());
             Intent intent = new Intent(WOMENCREATACOUNT.this, WOMENHOMEPAGE.class);
+
+
+
             startActivity(intent);
         });
 

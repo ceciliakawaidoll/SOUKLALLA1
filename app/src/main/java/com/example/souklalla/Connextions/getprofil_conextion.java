@@ -2,41 +2,35 @@ package com.example.souklalla.Connextions;
 
 import android.os.AsyncTask;
 
-import test.Product_elem;
 import com.example.souklalla.women.WOMENLOGIN;
-
 
 import java.io.DataOutputStream;
 import java.io.IOException;
-
 import java.io.ObjectInputStream;
 import java.net.Socket;
 import java.util.List;
 
+import test.Profile;
 
+public class getprofil_conextion  extends AsyncTask {
 
-public class get_products extends AsyncTask {
-    public static interface Result_prod {
-        void getproducts(List<Product_elem> products);
+    public static interface Result_prof {
+        void getprofile(Profile profile);
     }
-    Result_prod R;
-    public void set_result(Result_prod r){
+    getprofil_conextion.Result_prof R;
+    public void set_result(getprofil_conextion.Result_prof r){
         R = r;
     }
 
-    String Op,ip,Msg;
+    String ip,Email;
 
-    public get_products(String op, String ip,String msg) {
+    public getprofil_conextion( String ip,String email) {
 
         this.ip = ip;
-        Msg = msg;
-        Op = op;
+        Email = email;
     }
-
     @Override
     protected Object doInBackground(Object[] objects) {
-
-
         Object msg;
 
         Socket clientSocket = null;
@@ -48,10 +42,10 @@ public class get_products extends AsyncTask {
 
 
 
-            outToServer.writeBytes(Op+"\n");
-            outToServer.writeBytes(Msg+"\n");
+            outToServer.writeBytes("getprofile\n");
+            outToServer.writeBytes(Email+"\n");
             outToServer.flush();
-            ObjectInputStream  inFromServer = new ObjectInputStream (clientSocket.getInputStream());
+            ObjectInputStream inFromServer = new ObjectInputStream (clientSocket.getInputStream());
 
             msg = inFromServer.readObject();
             inFromServer.close();
@@ -74,8 +68,7 @@ public class get_products extends AsyncTask {
     {
         if(results != null)
         {
-            R.getproducts((List<Product_elem>) results);
+            R.getprofile((List<Profile>) results);
         }
-
     }
 }

@@ -55,7 +55,7 @@ public class UserLogin extends AppCompatActivity {
                 public void getResult(String email) {
                     if(!email.equals("")){
                         Email = email;
-                        Intent intent = new Intent(UserLogin.this, USERCATEGORY.class);
+                        Intent intent = new Intent(UserLogin.this, USERHOMEPROFILE.class);
                         startActivity(intent);
                     }
                 }

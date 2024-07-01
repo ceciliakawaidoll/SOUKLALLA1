@@ -36,7 +36,7 @@ public class WOMENHOMEPAGE extends AppCompatActivity {
           //  categoryadd.add(new CategoryAdd("إسم المنتوج  " + i));
         //}
         String ip = getResources().getString(R.string.ip);
-        get_products prods = new get_products(ip);
+        get_products prods = new get_products("getprodW",ip,WOMENLOGIN.Email);
         categoryAdd_Adapter adapter = new categoryAdd_Adapter(categoryadd);
         category_list.setAdapter(adapter);
         category_list.setLayoutManager(new LinearLayoutManager(this));

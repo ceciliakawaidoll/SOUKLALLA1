@@ -62,7 +62,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/editTextTextPassword3"
+                        android:id="@+id/tv_wname"
                         android:layout_width="381dp"
                         android:layout_height="40dp"
                         android:background="@color/transp"
@@ -116,7 +116,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/editTextTextPassword4"
+                        android:id="@+id/tv_wemail"
                         android:layout_width="300dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
@@ -161,7 +161,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/editTextTextPassword6"
+                        android:id="@+id/tv_wphone"
                         android:layout_width="300dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"

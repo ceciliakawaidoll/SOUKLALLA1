@@ -165,7 +165,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/editTextTextPassword3"
+                        android:id="@+id/tv_wname"
                         android:layout_width="match_parent"
                         android:layout_height="51dp"
                         android:background="@color/transp"
@@ -208,7 +208,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/editTextTextPassword6"
+                        android:id="@+id/tv_wphone"
                         android:layout_width="match_parent"
                         android:layout_height="51dp"
                         android:layout_weight="1"

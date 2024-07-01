@@ -36,8 +36,11 @@ public class USERCATEGORYSHOW extends AppCompatActivity {
         //    category.add(new Category("إسم المنتوج  "+ i) );
        // }
 
+        Intent intent = getIntent();
+        String cat = intent.getStringExtra("cat");
+
         String ip = getResources().getString(R.string.ip);
-        get_products prods = new get_products(ip);
+        get_products prods = new get_products("getprodU",ip,cat);
         Category_Adapter adapter = new Category_Adapter(category,this);
       category_list.setAdapter(adapter);
         category_list.setLayoutManager(new LinearLayoutManager(this));
@@ -52,8 +55,8 @@ public class USERCATEGORYSHOW extends AppCompatActivity {
         prods.execute();
 
         BACK.setOnClickListener(v -> {
-            Intent intent = new Intent(USERCATEGORYSHOW.this, USERCATEGORY.class);
-            startActivity(intent);
+            Intent intent1 = new Intent(USERCATEGORYSHOW.this, USERCATEGORY.class);
+            startActivity(intent1);
         });
 
     }

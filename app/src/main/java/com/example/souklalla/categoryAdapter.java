@@ -57,6 +57,7 @@ public class categoryAdapter extends BaseAdapter {
         imageView.setImageResource(image[position]);
         card.setOnClickListener(v -> {
             Intent intent=new Intent(context, USERCATEGORYSHOW.class);
+            intent.putExtra("cat",position);
             context.startActivity(intent);
         });
         textView.setText(categoryname[position]);
