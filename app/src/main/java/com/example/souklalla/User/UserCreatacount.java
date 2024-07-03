@@ -17,6 +17,8 @@ import androidx.cardview.widget.CardView;
 
 import com.example.souklalla.Connextions.Signup_connextion;
 import com.example.souklalla.R;
+import com.example.souklalla.women.WOMENCREATACOUNT;
+import com.example.souklalla.women.WOMENHOMEPAGE;
 
 import java.net.URL;
 
@@ -104,6 +106,7 @@ public class UserCreatacount extends AppCompatActivity {
             //String res = String.valueOf(new Sign_up_check(Email,Phone).execute());
             String ip = getResources().getString(R.string.ip);
             String res = String.valueOf(new Signup_connextion(fullname,Email,Phone,Pass1,Wilaya,ip,"user").execute());
+            Intent intent = new Intent(UserCreatacount.this, USERHOMEPROFILE.class);
         });
 
 

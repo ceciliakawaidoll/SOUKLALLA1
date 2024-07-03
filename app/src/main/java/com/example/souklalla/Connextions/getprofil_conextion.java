@@ -67,8 +67,8 @@ public class getprofil_conextion  extends AsyncTask {
     protected void onPostExecute(Object results)
     {
         if(results != null)
-        {
-            R.getprofile((List<Profile>) results);
+       {
+            R.getprofile((Profile)results);
         }
     }
 }

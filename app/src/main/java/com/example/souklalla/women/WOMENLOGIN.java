@@ -42,7 +42,7 @@ public class WOMENLOGIN extends AppCompatActivity {
             EditText name = findViewById(R.id.name_W);
             EditText pass = findViewById(R.id.password1);
             String ip =getResources().getString(R.string.ip);
-            Toast.makeText(this, name.getText().toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, name.getText().toString(), Toast.LENGTH_SHORT).show();
             Login_connection loginConnection = new Login_connection(name.getText().toString(),pass.getText().toString(),ip);
             loginConnection.set_result(new Login_connection.Result() {
                 @Override

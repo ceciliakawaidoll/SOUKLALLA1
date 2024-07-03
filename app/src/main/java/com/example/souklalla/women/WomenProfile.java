@@ -24,20 +24,25 @@ public class WomenProfile extends AppCompatActivity {
         TextView name= findViewById(R.id.tv_wname);
         TextView email= findViewById(R.id.tv_wemail);
         TextView phone= findViewById(R.id.tv_wphone);
-
+        name.setText("fullname");
         String ip = getResources().getString(R.string.ip);
         getprofil_conextion prof = new getprofil_conextion(ip,WOMENLOGIN.Email);
         prof.set_result(new getprofil_conextion.Result_prof() {
 
             @Override
             public void getprofile(Profile p) {
-              name.setText(p.getFullname());
+              //name.setText(p.getFullname());
+
               email.setText(p.getEmail());
               phone.setText(p.getPhone());
 
             }
+
+
         });
+
         prof.execute();
+
 
         BACK.setOnClickListener(v -> {
             Intent intent = new Intent(WomenProfile.this, WomenProfilehome.class);

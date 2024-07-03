@@ -3,12 +3,17 @@ package com.example.souklalla.User;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.souklalla.Connextions.getprofil_conextion;
 import com.example.souklalla.R;
+import com.example.souklalla.women.WOMENLOGIN;
+
+import test.Profile;
 
 public class UserEditProfile extends AppCompatActivity {
 

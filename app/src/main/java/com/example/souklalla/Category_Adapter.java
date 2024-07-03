@@ -42,9 +42,15 @@ public class Category_Adapter  extends RecyclerView.Adapter<Category_Adapter.Cat
         holder.product_name.setText(category.get(position).getName());
         holder.worke_n.setText(category.get(position).getWorker());
         holder.prod_price.setText(category.get(position).getPrice());
+        holder.prod_desc.setText(category.get(position).getDescr());
+
+
         holder.card.setOnClickListener(v -> {
             Intent intent=new Intent(context, PRODUCTBUY.class);
             context.startActivity(intent);
+            intent.putExtra("product_name", holder.product_name.getText().toString());
+            intent.putExtra("prod_price",holder.prod_price.getText().toString());
+            intent.putExtra("prod_desc",holder.prod_desc.getText().toString());
         });
 
         }
@@ -55,7 +61,7 @@ public class Category_Adapter  extends RecyclerView.Adapter<Category_Adapter.Cat
     }
 
     public class Category_holder extends RecyclerView.ViewHolder{
-        TextView product_name ,worke_n,prod_price;
+        TextView product_name ,worke_n,prod_price,prod_desc;
         CardView card ;
 
         public Category_holder(@NonNull View itemView) {

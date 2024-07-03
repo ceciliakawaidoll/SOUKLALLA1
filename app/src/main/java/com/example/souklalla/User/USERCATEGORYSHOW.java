@@ -37,10 +37,10 @@ public class USERCATEGORYSHOW extends AppCompatActivity {
        // }
 
         Intent intent = getIntent();
-        String cat = intent.getStringExtra("cat");
+        int cat = intent.getIntExtra("cat",-1);
 
         String ip = getResources().getString(R.string.ip);
-        get_products prods = new get_products("getprodU",ip,cat);
+        get_products prods = new get_products("getprodU",ip,String.valueOf(cat));
         Category_Adapter adapter = new Category_Adapter(category,this);
       category_list.setAdapter(adapter);
         category_list.setLayoutManager(new LinearLayoutManager(this));

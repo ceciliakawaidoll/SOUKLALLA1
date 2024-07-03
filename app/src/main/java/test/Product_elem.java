@@ -3,6 +3,7 @@ package test;
 import java.io.Serializable;
 
 public class Product_elem implements Serializable {
+	String[] categoryname ={"الأطباق","الحلويات","بلانر","الخياطة ","الحياكة","الفخار","المناسبات"};
 	String name,price,descr,Worker,Type;
 	int id;
 	private static final long serialVersionUID = 1L;
@@ -13,7 +14,7 @@ public class Product_elem implements Serializable {
 		this.price = price;
 		this.descr = descr;
 		Worker = worker;
-		Type = type;
+		Type = categoryname[Integer.parseInt(type)];
 		this.id = id;
 	}
 	public String getName() {

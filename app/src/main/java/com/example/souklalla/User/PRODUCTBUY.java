@@ -44,6 +44,15 @@ public class PRODUCTBUY extends AppCompatActivity {
             Intent intent = new Intent(PRODUCTBUY.this, Payment.class);
             startActivity(intent);
         });
+
+        Intent intent;
+        intent = getIntent();
+        String namep = intent.getStringExtra("product_name");
+        name.setText("" + namep);
+        String pric = intent.getStringExtra("prod_price");
+        String descp = intent.getStringExtra("prod_desc");
+        desc.setText("" + descp);
+
         plus.setOnClickListener(v -> {
             int num = Integer.parseInt(number.getText().toString());
             number.setText(String.valueOf(num+1));
